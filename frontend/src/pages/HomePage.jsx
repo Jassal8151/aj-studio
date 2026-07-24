@@ -124,8 +124,8 @@ const HomePage = () => {
                 <IoArrowForward className="w-5 h-5" />
               </Button>
             </Link>
-            <Link to="/contact">
-              <Button variant="outline" size="lg">
+            <Link to="/contact" >
+              <Button variant="outline" size="lg" >
                 Book A Session
               </Button>
             </Link>
