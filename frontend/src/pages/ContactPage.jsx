@@ -184,6 +184,7 @@ const ContactPage = () => {
 
                 {/* Subject Input */}
                 <Input
+                  className="text-black"
                   label="Subject / Project Type"
                   required
                   placeholder="e.g., Wedding Photography Booking for Oct 2026"
@@ -199,11 +200,10 @@ const ContactPage = () => {
                   <textarea
                     rows={6}
                     placeholder="Tell us about your event, location, preferred dates, or specific visual requirements..."
-                    className={`w-full bg-neutral-900/90 text-neutral-100 placeholder-neutral-500 text-sm rounded-lg border transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-amber-500/50 p-4 ${
-                      errors.message
+                    className={`w-full bg-neutral-900/90 text-neutral-100 placeholder-neutral-500 text-sm rounded-lg border transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-amber-500/50 p-4 ${errors.message
                         ? 'border-rose-500/80 focus:border-rose-500'
                         : 'border-neutral-800 focus:border-amber-500/80'
-                    }`}
+                      }`}
                     {...register('message', {
                       required: 'Message is required',
                       minLength: {
