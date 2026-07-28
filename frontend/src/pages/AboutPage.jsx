@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import arshPortrait from '../assets/arsh-potrait.png';
 import {
   IoAddOutline,
   IoRemoveOutline,
@@ -80,7 +81,7 @@ const AboutPage = () => {
             <div className="relative">
               <div className="aspect-[4/5] rounded-2xl overflow-hidden border border-neutral-800 shadow-2xl">
                 <img
-                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=80"
+                  src={arshPortrait}
                   alt="Arshdeep Singh Jassal portrait"
                   className="w-full h-full object-cover"
                 />

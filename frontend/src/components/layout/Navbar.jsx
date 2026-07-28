@@ -49,7 +49,7 @@ const Navbar = () => {
               <Link
                 key={link.name}
                 to={link.path}
-                className={`text-sm font-medium transition-colors hover:opacity-70 ${
+                className={`text-sm font-bold transition-colors hover:opacity-70 ${
                   location.pathname === link.path 
                     ? (isScrolled || !isHomePage ? 'text-black font-semibold' : 'text-white font-semibold')
                     : (isScrolled || !isHomePage ? 'text-gray-600' : 'text-gray-300')

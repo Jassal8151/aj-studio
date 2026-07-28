@@ -15,12 +15,16 @@ export const createContactInquiry = async (req, res, next) => {
       message,
     });
 
-    // Optionally notify admin via email
+    // Notify admin via email when a new inquiry is submitted
     try {
       await sendEmail({
-        email: process.env.EMAIL_USER || 'admin@ajstudio.com',
+        email: process.env.ADMIN_EMAIL || process.env.EMAIL_USER || 'admin@ajstudio.com',
         subject: `New Inquiry from ${name}: ${subject}`,
         message: `You have received a new inquiry.\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
+        html: `<p>You have received a new inquiry.</p>
+               <p><strong>Name:</strong> ${name}<br />
+               <strong>Email:</strong> ${email}</p>
+               <p><strong>Message:</strong><br />${message.replace(/\n/g, '<br />')}</p>`,
       });
     } catch (err) {
       console.error('Failed to send admin notification email', err);
