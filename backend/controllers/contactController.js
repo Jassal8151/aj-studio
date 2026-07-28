@@ -11,6 +11,7 @@ export const createContactInquiry = async (req, res, next) => {
     const contact = await Contact.create({
       name,
       email,
+      'Contact Number': req.body.phone,
       subject,
       message,
     });
@@ -20,10 +21,11 @@ export const createContactInquiry = async (req, res, next) => {
       await sendEmail({
         email: process.env.ADMIN_EMAIL || process.env.EMAIL_USER || 'admin@ajstudio.com',
         subject: `New Inquiry from ${name}: ${subject}`,
-        message: `You have received a new inquiry.\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
+        message: `You have received a new inquiry.\n\nName: ${name}\nEmail: ${email}\nContact Number: ${req.body.phone}\n\nMessage:\n${message}`,
         html: `<p>You have received a new inquiry.</p>
                <p><strong>Name:</strong> ${name}<br />
                <strong>Email:</strong> ${email}</p>
+               <p><strong>Contact Number:</strong> ${req.body.phone}</p>
                <p><strong>Message:</strong><br />${message.replace(/\n/g, '<br />')}</p>`,
       });
     } catch (err) {

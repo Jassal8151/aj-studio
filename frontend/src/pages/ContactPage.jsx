@@ -180,6 +180,22 @@ const ContactPage = () => {
                       },
                     })}
                   />
+                   {/* Contect No. */}
+                  <Input
+                    label="Contact Number"
+                    type="tel"
+                    required
+                    placeholder="+1 (555) 123-4567"
+                    error={errors.phone?.message}
+                    {...register('phone', {
+                      required: 'Contact number is required',
+                      pattern: {
+                        value: /^\+?[\d\s\-\(\)]+$/,
+                        message: 'Enter a valid contact number',
+                      },
+                    })} 
+
+                  />
                 </div>
 
                 {/* Subject Input */}
