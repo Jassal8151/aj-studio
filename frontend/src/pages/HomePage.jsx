@@ -17,7 +17,7 @@ import LightboxModal from '../components/common/LightboxModal';
 import { usePortfolioList } from '../hooks/usePortfolio';
 import { CardSkeleton } from '../components/common/LoadingSpinner';
 import { STUDIO_INFO } from '../constants/categories';
-
+import arsh from '../assets/arsh.png';
 const services = [
   {
     icon: IoHeartOutline,
@@ -183,7 +183,7 @@ const HomePage = () => {
             <div className="relative">
               <div className="aspect-[4/5] rounded-2xl overflow-hidden border border-neutral-800 shadow-2xl relative z-10">
                 <img
-                  src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=1000&q=80"
+                  src={arsh}
                   alt="Arshdeep Singh Jassal Principal Photographer"
                   className="w-full h-full object-cover"
                 />

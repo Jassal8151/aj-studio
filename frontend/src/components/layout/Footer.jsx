@@ -45,10 +45,9 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
             <ul className="space-y-2 text-sm text-gray-400">
-              <li>hello@ajstudio.com</li>
-              <li>+1 (555) 123-4567</li>
-              <li>123 Photography Lane</li>
-              <li>New York, NY 10001</li>
+              <li>arshdeepsingh28484@gmail.com</li>
+              <li>+91 9915381514</li>
+              <li>237-A, Shastri Nagar, Model Town, Ludhiana, Punjab 141002</li>
             </ul>
           </div>
         </div>

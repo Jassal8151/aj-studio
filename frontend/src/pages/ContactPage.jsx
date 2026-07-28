@@ -81,7 +81,7 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <h4 className="text-xs font-bold text-white uppercase tracking-wider">Email Address</h4>
-                    <p className="text-xs text-neutral-300 mt-1">{STUDIO_INFO.email}</p>
+                    <p className="text-xs text-yellow-400 mt-1 hover:underline">arshdeepsingh28482@gmail.com</p>
                   </div>
                 </div>
 
@@ -92,7 +92,7 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <h4 className="text-xs font-bold text-white uppercase tracking-wider">Phone / WhatsApp</h4>
-                    <p className="text-xs text-neutral-300 mt-1">{STUDIO_INFO.phone}</p>
+                    <p className="text-xs text-yellow-400 mt-1 hover:underline">+91 9915381514</p>
                   </div>
                 </div>
 
@@ -103,7 +103,16 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <h4 className="text-xs font-bold text-white uppercase tracking-wider">Studio Headquarters</h4>
-                    <p className="text-xs text-neutral-300 mt-1">{STUDIO_INFO.location}</p>
+                    <p className="text-xs text-neutral-300 mt-1">
+                      <a
+                        href="https://maps.app.goo.gl/qjmz1eFzrUj81ty8A"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-amber-400 hover:underline"
+                      >
+                        237-A, Shastri Nagar, Model Town, Ludhiana, Punjab 141002
+                      </a>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -113,7 +122,7 @@ const ContactPage = () => {
                 <h4 className="text-xs font-bold text-white uppercase tracking-widest">Follow & Connect</h4>
                 <div className="flex items-center gap-3">
                   <a
-                    href={STUDIO_INFO.socials.instagram}
+                    href="https://www.instagram.com/its_arsh_jassal__"
                     target="_blank"
                     rel="noreferrer"
                     className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-neutral-900 border border-neutral-800 text-xs text-neutral-300 hover:text-amber-400 hover:border-amber-500/50 transition-all"
@@ -122,7 +131,7 @@ const ContactPage = () => {
                     Instagram
                   </a>
                   <a
-                    href={STUDIO_INFO.socials.facebook}
+                    href="https://www.facebook.com/arshdeep.jassal.73"
                     target="_blank"
                     rel="noreferrer"
                     className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-neutral-900 border border-neutral-800 text-xs text-neutral-300 hover:text-amber-400 hover:border-amber-500/50 transition-all"
@@ -131,7 +140,7 @@ const ContactPage = () => {
                     Facebook
                   </a>
                   <a
-                    href={STUDIO_INFO.socials.linkedin}
+                    href="https://www.linkedin.com/in/arshdeep-singh-a12593334"
                     target="_blank"
                     rel="noreferrer"
                     className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-neutral-900 border border-neutral-800 text-xs text-neutral-300 hover:text-amber-400 hover:border-amber-500/50 transition-all"
