@@ -246,13 +246,13 @@ const ContactPage = () => {
 
                 {/* Submit Button */}
                 <Button
-                  type="submit"
+                  type="submit"                       
                   variant="gold"
                   size="lg"
-                  className="w-full flex items-center justify-center gap-2"
+                  className="w-full flex items-center justify-center gap-6"
                   isLoading={submitContactMutation.isPending}
                 >
-                  <IoPaperPlaneOutline className="w-5 h-5" />
+                  <IoPaperPlaneOutline className="w-6 h-5" />
                   Submit Inquiry
                 </Button>
               </form>

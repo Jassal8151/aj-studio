@@ -18,8 +18,8 @@ export const uploadToCloudinary = async (file) => {
       formData
     );
     return {
-      url: response.data.secure_url,
-      public_id: response.data.public_id
+      imageUrl: response.data.secure_url || response.data.url,
+      publicId: response.data.public_id || response.data.publicId,
     };
   } catch (error) {
     console.error('Error uploading image to Cloudinary:', error);

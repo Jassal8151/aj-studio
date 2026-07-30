@@ -56,7 +56,13 @@ const Footer = () => {
           <p className="text-xs text-gray-500">
             &copy; {currentYear} AJ Studio. All rights reserved.
           </p>
-          <div className="flex gap-4 text-xs text-gray-500">
+          <div className="flex flex-wrap items-center gap-3 text-xs text-gray-500">
+            <Link
+              to="/admin/dashboard"
+              className="rounded-full border border-gray-700 px-3 py-1.5 font-medium text-gray-300 transition-colors hover:border-white hover:text-white"
+            >
+              Admin Dashboard
+            </Link>
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
           </div>

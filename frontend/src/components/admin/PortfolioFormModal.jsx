@@ -11,6 +11,7 @@ const PortfolioFormModal = ({ isOpen, onClose, onSubmit, initialData = null, isL
   const [uploadingImage, setUploadingImage] = useState(false);
   const [previewUrl, setPreviewUrl] = useState(initialData?.imageUrl || '');
   const [publicId, setPublicId] = useState(initialData?.publicId || '');
+  const [selectedImageFile, setSelectedImageFile] = useState(null);
 
   const categoriesFiltered = CATEGORIES.filter((c) => c !== 'All');
 
@@ -41,6 +42,7 @@ const PortfolioFormModal = ({ isOpen, onClose, onSubmit, initialData = null, isL
       setValue('camera', initialData.camera || CAMERA_PRESETS[0]);
       setPreviewUrl(initialData.imageUrl || '');
       setPublicId(initialData.publicId || '');
+      setSelectedImageFile(null);
     } else {
       reset({
         title: '',
@@ -52,28 +54,46 @@ const PortfolioFormModal = ({ isOpen, onClose, onSubmit, initialData = null, isL
       });
       setPreviewUrl('');
       setPublicId('');
+      setSelectedImageFile(null);
     }
   }, [initialData, isOpen, setValue, reset]);
 
-  // Handle direct file upload to Cloudinary
-  const handleFileChange = async (e) => {
+  const handleFileChange = (e) => {
     const file = e.target.files?.[0];
     if (!file) return;
 
-    setUploadingImage(true);
-    try {
-      const res = await uploadToCloudinary(file);
-      setPreviewUrl(res.imageUrl);
-      setPublicId(res.publicId);
-    } catch (err) {
-      console.error('Upload Error:', err);
-    } finally {
-      setUploadingImage(false);
-    }
+    setSelectedImageFile(file);
+    setPreviewUrl(URL.createObjectURL(file));
   };
 
-  const onFormSubmit = (data) => {
-    if (!previewUrl || !publicId) {
+  const onFormSubmit = async (data) => {
+    if (!previewUrl) {
+      alert('Please select an image before saving');
+      return;
+    }
+
+    if (selectedImageFile) {
+      setUploadingImage(true);
+      try {
+        const res = await uploadToCloudinary(selectedImageFile);
+        setPreviewUrl(res.imageUrl);
+        setPublicId(res.publicId);
+
+        onSubmit({
+          ...data,
+          imageUrl: res.imageUrl,
+          publicId: res.publicId,
+        });
+      } catch (err) {
+        console.error('Upload Error:', err);
+        alert('Image upload failed. Please try again.');
+      } finally {
+        setUploadingImage(false);
+      }
+      return;
+    }
+
+    if (!publicId && !initialData?.imageUrl) {
       alert('Please upload an image before saving');
       return;
     }
@@ -112,7 +132,7 @@ const PortfolioFormModal = ({ isOpen, onClose, onSubmit, initialData = null, isL
               <div className="py-6 space-y-2">
                 <IoCloudUploadOutline className="w-10 h-10 mx-auto text-amber-500 animate-bounce" />
                 <p className="text-xs text-neutral-300 font-medium">
-                  {uploadingImage ? 'Uploading image to Cloudinary...' : 'Click to select image file'}
+                  {uploadingImage ? 'Uploading image to Cloudinary...' : 'Select an image. It will upload when you save.'}
                 </p>
                 <p className="text-[10px] text-neutral-500 uppercase tracking-widest">
                   JPG, PNG, WEBP UP TO 10MB

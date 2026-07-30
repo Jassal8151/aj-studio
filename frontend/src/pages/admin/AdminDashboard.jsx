@@ -226,7 +226,7 @@ const AdminDashboard = () => {
                         </td>
 
                         {/* Title */}
-                        <td className="py-3 px-6 font-semibold text-white">
+                        <td className="py-3 px-6 font-semibold text-black">
                           {item.title}
                         </td>
 
