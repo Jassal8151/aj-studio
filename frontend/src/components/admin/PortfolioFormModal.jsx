@@ -115,7 +115,7 @@ const PortfolioFormModal = ({ isOpen, onClose, onSubmit, initialData = null, isL
       <form onSubmit={handleSubmit(onFormSubmit)} className="space-y-5">
         {/* Direct Cloudinary Upload Dropzone */}
         <div className="space-y-1.5">
-          <label className="block text-xs font-semibold text-neutral-300 tracking-wider uppercase">
+          <label className="block text-xs font-semibold text-black tracking-wider uppercase">
             Image Upload (Direct Unsigned Cloudinary) <span className="text-amber-500">*</span>
           </label>
 

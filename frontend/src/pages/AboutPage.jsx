@@ -19,10 +19,10 @@ const equipment = [
 ];
 
 const timeline = [
-  { year: '2016', title: 'Studio Founded', desc: 'Established AJ Studio in New York, focusing on editorial fashion and high-end portraiture.' },
-  { year: '2019', title: 'Global Destination Expansion', desc: 'Expanded services across Europe and Asia, capturing luxury weddings in Italy, France, and Japan.' },
-  { year: '2022', title: 'International Photography Award', desc: 'Received International Wedding Photographer of the Year First Honor for Amalfi Coast series.' },
-  { year: '2025', title: 'Medium Format Fine Art Exhibition', desc: 'Solo exhibition hosted in Soho, NY featuring medium-format black-and-white portraits.' },
+  { year: '2025', title: 'Studio Founded', desc: 'Established AJ Studio in New York, focusing on editorial fashion and high-end portraiture.' },
+  { year: '2025', title: 'Global Destination Expansion', desc: 'Expanded services across Europe and Asia, capturing luxury weddings in Italy, France, and Japan.' },
+  { year: '2026', title: 'International Photography Award', desc: 'Received International Wedding Photographer of the Year First Honor for Amalfi Coast series.' },
+  { year: '2026', title: 'Medium Format Fine Art Exhibition', desc: 'Solo exhibition hosted in Soho, NY featuring medium-format black-and-white portraits.' },
 ];
 
 const faqs = [

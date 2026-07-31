@@ -326,7 +326,7 @@ const HomePage = () => {
               @AJSTUDIO.PHOTOGRAPHY ON INSTAGRAM
             </span>
             <a
-              href={STUDIO_INFO.socials.instagram}
+              href="https://www.instagram.com/its_arsh_jassal__"
               target="_blank"
               rel="noreferrer"
               className="text-xs font-semibold text-amber-400 hover:text-amber-300 uppercase tracking-wider"
